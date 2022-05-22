@@ -100,6 +100,8 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--title-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav :not(:last-child) {
     margin-right: 50px;
@@ -127,6 +129,7 @@ img {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .kontakts :not(:last-child) {
     margin-right: 50px;
@@ -143,7 +146,6 @@ img {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background-img.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    /* background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)); */
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -184,7 +186,53 @@ img {
 .hero button:focus {
     cursor: pointer;
 }
+/* --------------------модальное окно -------------- */
+.backdrop {
+    z-index: 1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1);
 
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    background-color: var(--background-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+
+    
+}
+.modal .svg {
+    display: block;
+}
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 9px;
+    background-color: var(--background-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.is-hidden {
+    transform: scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
 /* --------------особенности------------------- */
 .pecul ul{
     display: flex;
@@ -314,6 +362,8 @@ img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-media:hover,
 .social-media:focus {
@@ -337,6 +387,8 @@ img {
     border: 1px solid rgba(175, 177, 184, 1);
     border-radius: 4px;
     color: rgba(175, 177, 184, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients a:hover,
 .clients a:focus {
@@ -372,6 +424,12 @@ img {
     line-height: 1.7;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.address a:hover,
+.address a:focus {
+    color: var(--accent);
 }
 .footer-block-2 {
     padding-top: 12px;
@@ -400,6 +458,8 @@ img {
     border-radius: 50%;
     color: var(--color-h1);
     background-color: rgba(255,255,255,0.1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-media:hover,
 .footer-media:focus {
@@ -427,7 +487,9 @@ img {
     line-height: 1.62;
     letter-spacing: 0.03em;
     color: var(--title-color);
-    background-color: #F5F4FA;;
+    background-color: #F5F4FA;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 .button:hover,
 .button:focus {

@@ -39,14 +39,23 @@
             </ul>
         </div>
     </header>
-    <main>
-        <!-- герой -->   
+    <main>  
+        <!-- герой -->
         <section class="section hero">
             <div class="container">
                 <h1>Эффективные решения для вашего бизнеса</h1>
-                <button type="button">Заказать услугу</button>
+                <button type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
+        <div class="is-hidden backdrop" data-modal>
+            <div class="modal">
+                <button type="button" data-modal-close class="modal-close">
+                    <svg class="svg" width="11" height="11">
+                        <use href="./images/symbol-defs.svg#vector"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
         <!-- особенности -->
         <section class="section pecul">
             <div class="container">
@@ -328,6 +337,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
